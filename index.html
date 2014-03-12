@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PauliusKripaitis.DevLog</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PauliusKripaitis.DevLog</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted">PauliusKripaitis.DevLog</h3>
-      </div>
-      <div class="jumbotron">
-        <h1>Žurnalas. Irankiu deže.</h1>
-        <p class="lead"></p>Žurnale užfiksuoti kasdieniai front-ender'io iššukiai ir laimejimai.<br/> Dežeje surinkti išbandyti ir veikiantys JS irankiai, dažniausiai pasitaikancioms UI problemoms spresti.
-      </div>
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h3>Žurnalas</h3>
-          <p><span>2014.03.05 </span>Reikia, kad multiselect plugine pasirinkimai atsidarytu i viršu, jei select elementas labai arti lango apacios. 
-            <pre>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h3 class="text-muted">PauliusKripaitis.DevLog</h3>
+			</div>
+			<div class="jumbotron">
+				<h1>Žurnalas. Irankiu deže.</h1>
+				<p class="lead"></p>Žurnale užfiksuoti kasdieniai front-ender'io iššukiai ir laimejimai.<br/> Dežeje surinkti išbandyti ir veikiantys JS irankiai, dažniausiai pasitaikancioms UI problemoms spresti.
+			</div>
+			<div class="row marketing">
+				<div class="col-lg-6">
+					<h3>Žurnalas</h3>
+					<p><span>2014.03.05 </span>Reikia, kad multiselect plugine pasirinkimai atsidarytu i viršu, jei select elementas labai arti lango apacios. 
+						<pre>
 							<code>
 							var $window = $(window);
 							var $multiselect = $('.multiselect').multiselect({
-							  header: false,
-							  beforeopen: function(){
+								header: false,
+								beforeopen: function(){
 								if (($window.height() - ($('.ui-multiselect').offset().top - $window.scrollTop()) ) < 180){
-								  $multiselect.multiselect("option", {position: {
+									$multiselect.multiselect("option", {position: {
 									my: 'left bottom',
 									at: 'left top'
-								  });
+									});
 								}else{
-								  $multiselect.multiselect("option", {position: {
+									$multiselect.multiselect("option", {position: {
 									my: 'left top',
 									at: 'left bottom'
-								  }});
+									}});
 								}
 							 }
 							}); 
 							</code>
 						</pre>
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <h3>Irankiu deže</h3>
-          <h4>Karuseles ir slaideriai</h4>
-          <p><a href="http://jquery.malsup.com/cycle2/">Cycle2</a> [<a href="http://jquery.malsup.com/cycle2/demo/">Demo</a>, <a href="http://jquery.malsup.com/cycle2/api/">Dokumentacija</a>]</p>
-          <h4>Custom select </h4>
-          <p><a href="https://github.com/fnagel/jquery-ui/wiki/Selectmenu">jQuery UI Selectmenu Widget by fnagel</a></p>
-          <h4>Custom multiselect</h4>
-          <p>
-            jQuery UI MultiSelect Widget by Eric Hynds
-             [<a href="http://www.erichynds.com/examples/jquery-ui-multiselect-widget/demos/#basic">Demo</a>, <a href="http://www.erichynds.com/blog/jquery-ui-multiselect-widget">Dokumentacija</a>]
-          </p>
-          <h4>Custom radio/checkbox</h4>
-          <p><a href="http://fronteed.com/iCheck/">iCheck</a></p>
-          <h4>Content'o ir paveiksleliu paetikimas popupe</h4>
-          <p><a href="http://formstone.it/components/boxer">Boxer</a>Primityvus irgana prastai dokumentuotas, bet daro ka reikia :)</p>
-          <p><a href="http://fancybox.net/howto">Fancybox</a></p>
-          <h4>Custom kontento scrolleris</h4>
-          <p><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">jQuery custom content scroller by malihu</a></p>
-          <h4>Limpantys(sticky) blokai</h4>
-          <p><a href="http://imakewebthings.com/jquery-waypoints/shortcuts/sticky-elements/">jQuery Waypoints - sticky-elements</a></p>
-          <h4>Eventai kai pasiekiamas tam tikras elementas</h4>
-          <p><a href="http://imakewebthings.com/jquery-waypoints/">jQuery Waypoints</a></p>
-          <h4>ScrollTo</h4>
-          <p><a href="http://balupton.github.io/jquery-scrollto/">Smooth scroll to any jQuery/DOM element</a></p>
-          <h4>IE (6-9) kampu apvalinimas, šešeliai</h4>
-          <p><a href="http://css3pie.com/documentation/">CSS3PIE</a></p>
-          <h4>Patogus IE veikiantys CSS selektoriai (:first-child, :last-child, :nth-child(2n)...)</h4>
-          <p><a href="http://selectivizr.com/">selectivizr</a></p>
-          <h4>Placeholderis IE</h4>
-          <p><a href="https://gist.github.com/jakebellacera/1085180">jquery.placeholder.js</a></p>
-        </div>
-      </div>
-      <div class="footer">
-        <p>© 2014 | <a href="http://paulius.kripaitis.lt">Paulius Kripaitis </a></p>
-      </div>
-    </div>
-  </body>
+					</p>
+				</div>
+				<div class="col-lg-6">
+					<h3>Irankiu deže</h3>
+					<h4>Karuseles ir slaideriai</h4>
+					<p><a href="http://jquery.malsup.com/cycle2/">Cycle2</a> [<a href="http://jquery.malsup.com/cycle2/demo/">Demo</a>, <a href="http://jquery.malsup.com/cycle2/api/">Dokumentacija</a>]</p>
+					<h4>Custom select </h4>
+					<p><a href="https://github.com/fnagel/jquery-ui/wiki/Selectmenu">jQuery UI Selectmenu Widget by fnagel</a></p>
+					<h4>Custom multiselect</h4>
+					<p>
+						jQuery UI MultiSelect Widget by Eric Hynds
+						 [<a href="http://www.erichynds.com/examples/jquery-ui-multiselect-widget/demos/#basic">Demo</a>, <a href="http://www.erichynds.com/blog/jquery-ui-multiselect-widget">Dokumentacija</a>]
+					</p>
+					<h4>Custom radio/checkbox</h4>
+					<p><a href="http://fronteed.com/iCheck/">iCheck</a></p>
+					<h4>Content'o ir paveiksleliu paetikimas popupe</h4>
+					<p><a href="http://formstone.it/components/boxer">Boxer</a>Primityvus irgana prastai dokumentuotas, bet daro ka reikia :)</p>
+					<p><a href="http://fancybox.net/howto">Fancybox</a></p>
+					<h4>Custom kontento scrolleris</h4>
+					<p><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">jQuery custom content scroller by malihu</a></p>
+					<h4>Limpantys(sticky) blokai</h4>
+					<p><a href="http://imakewebthings.com/jquery-waypoints/shortcuts/sticky-elements/">jQuery Waypoints - sticky-elements</a></p>
+					<h4>Eventai kai pasiekiamas tam tikras elementas</h4>
+					<p><a href="http://imakewebthings.com/jquery-waypoints/">jQuery Waypoints</a></p>
+					<h4>ScrollTo</h4>
+					<p><a href="http://balupton.github.io/jquery-scrollto/">Smooth scroll to any jQuery/DOM element</a></p>
+					<h4>IE (6-9) kampu apvalinimas, šešeliai</h4>
+					<p><a href="http://css3pie.com/documentation/">CSS3PIE</a></p>
+					<h4>Patogus IE veikiantys CSS selektoriai (:first-child, :last-child, :nth-child(2n)...)</h4>
+					<p><a href="http://selectivizr.com/">selectivizr</a></p>
+					<h4>Placeholderis IE</h4>
+					<p><a href="https://gist.github.com/jakebellacera/1085180">jquery.placeholder.js</a></p>
+				</div>
+			</div>
+			<div class="footer">
+				<p>© 2014 | <a href="http://paulius.kripaitis.lt">Paulius Kripaitis </a></p>
+			</div>
+		</div>
+	</body>
 </html>
