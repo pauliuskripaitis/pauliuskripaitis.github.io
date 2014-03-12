@@ -21,25 +21,25 @@
             <div class="col-lg-6">
                <h3>Žurnalas</h3>
                <p><span>2014.03.05 </span>Reikia, kad multiselect plugine pasirinkimai atsidarytu i viršu, jei select elementas labai arti lango apacios. 
-                  <pre><code>
-                  var $window = $(window);
-                  var $multiselect = $('.multiselect').multiselect({
-                     header: false,
-                     beforeopen: function(){
-                        if (($window.height() - ($('.ui-multiselect').offset().top - $window.scrollTop()) ) < 180){
-                           $multiselect.multiselect("option", {position: {
-                              my: 'left bottom',
-                              at: 'left top'
-                           });
-                        }else{
-                           $multiselect.multiselect("option", {position: {
-                              my: 'left top',
-                              at: 'left bottom'
-                           }});
-                        }
-                     }
-                  }); 
-                  </code></pre>
+<pre><code>
+var $window = $(window);
+var $multiselect = $('.multiselect').multiselect({
+   header: false,
+   beforeopen: function(){
+      if (($window.height() - ($('.ui-multiselect').offset().top - $window.scrollTop()) ) < 180){
+         $multiselect.multiselect("option", {position: {
+            my: 'left bottom',
+            at: 'left top'
+         });
+      }else{
+         $multiselect.multiselect("option", {position: {
+            my: 'left top',
+            at: 'left bottom'
+         }});
+      }
+   }
+}); 
+</code></pre>
                </p>
             </div>
             <div class="col-lg-6">
