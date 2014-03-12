@@ -20,9 +20,33 @@
          <div class="row marketing">
             <div class="col-lg-6">
                <h3>Žurnalas</h3>
-               <p><span>2014.03.05 </span>Reikia, kad multiselect plugine pasirinkimai atsidarytu i viršu, jei select elementas labai arti lango apacios. 
-<pre><code>
-var $window = $(window);
+               <p>
+                  <strong>2014.03.11</strong> Naudingas dalykas naudojant kartu su CSS transition, kai nebereikalingi anksčiau su js sukurti stiliai, o norim atstayti į tai kas ateina iš CSS failo. 
+<pre><code>.css('height', ' ');</code></pre>
+               </p>
+               <p>
+                  <strong>2014.03.10</strong> Pridedu prie įrankių CSS geometrinių figūrų generatorių. Naudingiausia praktikoje - trikampiai.
+                  <hr/>
+                  Prisireikė pagauti su js kada baigiasi CSS transformacijos, tai būdas toks:
+<pre><code>$("...").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ ... });</code></pre>
+               </p>
+               <p>
+                  <strong>2014.03.06</strong> Kai prireikia, kad :hover įvyktų pasikeitimas ne tik pačiam elemntui ant kurio užvedi bet ir kitam jo siblingui:
+<pre><code>.menu li:hover, .menu li:hover + li {background: none;}</code></pre>
+                  <hr/>
+                  Norėtūsi animuoti su CSS  bloko aukštį iš 0 į auto, bet taip deja negalima. Tad tenka nefiksuoto aukščio bloką "wrapinti" kitu elementu ir su .hover() jam priskirti vidinio elemento aukštį, o nuvedus kursorių priskirti 0;
+<pre><code>$('.has-hover-block').hover(function(){
+   $(this).find('.hover-content-wrap').css('height', $(this).find('.hover-content').height());
+},function(){
+   $(this).find('.hover-content-wrap').css('height', 0);
+});
+</code></pre>
+                  <hr/>
+                  iPad'as ir iPhona'as turi neprašytus inset shadow input elementams. Jei jie nereikalingi pašalinimui naudojam šitą: 
+<pre><code>input {-webkit-appearance: none;}</code></pre>                 
+               </p>
+               <p><strong>2014.03.05</strong> Reikia, kad multiselect plugine pasirinkimai atsidarytu i viršų, kai select elementas labai arti lango apačios. 
+<pre><code>var $window = $(window);
 var $multiselect = $('.multiselect').multiselect({
    header: false,
    beforeopen: function(){
@@ -44,6 +68,9 @@ var $multiselect = $('.multiselect').multiselect({
             </div>
             <div class="col-lg-6">
                <h3>Irankiu deže</h3>
+               <h4>Generatoriai:</h4>
+               <p> <a href="http://html-generator.weebly.com/css-shape-generator.html">CSS shapes (Trikampiai, kitos nesudėtingos figūros)</a></p>
+               <p> Custom fontų generavimui: <a href="http://www.fontsquirrel.com/tools/webfont-generator">Fontsquerl</a></p>
                <h4>Karuseles ir slaideriai</h4>
                <p><a href="http://jquery.malsup.com/cycle2/">Cycle2</a> [<a href="http://jquery.malsup.com/cycle2/demo/">Demo</a>, <a href="http://jquery.malsup.com/cycle2/api/">Dokumentacija</a>]</p>
                <h4>Custom select </h4>
