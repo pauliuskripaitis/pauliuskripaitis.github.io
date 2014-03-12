@@ -14,15 +14,15 @@
             <h3 class="text-muted">PauliusKripaitis.DevLog</h3>
          </div>
          <div class="jumbotron">
-            <h1>Žurnalas. Irankiu deže.</h1>
-            <p class="lead"></p>Žurnale užfiksuoti kasdieniai front-ender'io iššukiai ir laimejimai.<br/> Dežeje surinkti išbandyti ir veikiantys JS irankiai, dažniausiai pasitaikancioms UI problemoms spresti.
+            <h1>Žurnalas. Įrankių dėžė.</h1>
+            <p class="lead"></p>Žurnale užfiksuoti kasdieniai front-ender'io iššukiai ir laimėjimai.<br/> Dėžėje surinkti išbandyti ir veikiantys JS įrankiai, dažniausiai pasitaikančioms UI problemoms spręsti.
          </div>
          <div class="row marketing">
             <div class="col-lg-6">
                <h3>Žurnalas</h3>
                <p>
                   <strong>2014.03.11</strong> Naudingas dalykas naudojant kartu su CSS transition, kai nebereikalingi anksčiau su js sukurti stiliai, o norim atstayti į tai kas ateina iš CSS failo. 
-<pre><code>.css('height', ' ');</code></pre>
+<pre><code>$("...").css('height', ' ');</code></pre>
                </p>
                <p>
                   <strong>2014.03.10</strong> Pridedu prie įrankių CSS geometrinių figūrų generatorių. Naudingiausia praktikoje - trikampiai.
@@ -31,7 +31,7 @@
 <pre><code>$("...").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ ... });</code></pre>
                </p>
                <p>
-                  <strong>2014.03.06</strong> Kai prireikia, kad :hover įvyktų pasikeitimas ne tik pačiam elemntui ant kurio užvedi bet ir kitam jo siblingui:
+                  <strong>2014.03.06</strong> Kai prireikia, kad :hover įvyktų pasikeitimas ne tik pačiam elemntui ant kurio užvedi kursorių, bet ir kitam po jo einančiam siblingui:
 <pre><code>.menu li:hover, .menu li:hover + li {background: none;}</code></pre>
                   <hr/>
                   Norėtūsi animuoti su CSS  bloko aukštį iš 0 į auto, bet taip deja negalima. Tad tenka nefiksuoto aukščio bloką "wrapinti" kitu elementu ir su .hover() jam priskirti vidinio elemento aukštį, o nuvedus kursorių priskirti 0;
