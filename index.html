@@ -21,6 +21,55 @@
             <div class="col-lg-6">
                <h3>Žurnalas</h3>
                <p>
+                  <strong>2014.04.21</strong> Vertingi savatiniai paskaitymai:
+               </p>
+               <ul>
+                  <li><a href="http://www.hackernewsletter.com/">http://www.hackernewsletter.com/</a></li>
+                  <li><a href="http://tympanus.net/codrops/collective/">http://tympanus.net/codrops/collective/</a></li>
+               </ul>
+               <p>
+                  <strong>2014.04.17</strong>
+                  Apie animacijų greičius:
+               </p>
+               <ul>
+                  <li><a href="http://css-tricks.com/myth-busting-css-animations-vs-javascript/">http://css-tricks.com/myth-busting-css-animations-vs-javascript/</a></li>
+                  <li><a href="http://www.greensock.com/gsap-js/">http://www.greensock.com/gsap-js/</a></li>
+               </ul>
+               <p>
+                  <strong>2014.04.15</strong> html characteris mobiliu meniu ikonai HTML character 
+                  <pre><code>&#9776;</code></pre>
+               </p>
+               <p>
+                  <strong>2014.04.11</strong> <a href="http://jsfiddle.net/3bXGw/1/">Paprastas būdas custom stylinti input[type="text"] mygtuką</a>
+               </p>
+               <p>
+                  <strong>2014.04.10</strong>
+                  css3-multi-column.js veikimas: css3-multi-column.js stilius turi būti aprašytas vienai kalsei. pvz.: .columns-2 (negalima .content .columns-2)
+               </p>
+               <p>
+                  <strong>2014.04.10</strong>Sulietuvinta konfigūracija jQ UI datepicker'iui
+<pre><code> $('.datepicker').datepicker({ 
+            showOn: "button",
+            buttonText: "",
+            dateFormat: "yy-mm-dd",
+            firstDay: 1,
+            dayNamesMin: [ "Se", "Pi", "An", "Tr", "Ke", "Pe", "Še" ],
+            monthNames: [ "Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis" ] 
+        });
+</code></pre> 
+
+               </p>
+               <p>
+                  <strong>2014.04.08</strong> <a href="http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser">Su JS aptinkam mobilias naršykles</a>
+               </p>
+               <p>
+                   <strong>2014.04.08</strong> HTML5 bg video player'is netinkamas naudoti kai reikia video rodyti fone  mobiliuose įrenginiuose. Reiktų kito plugino.                
+               </p>
+               <p>
+                   <strong>2014.04.04</strong> Prireikė custom stilizuoti tik sąrašo (ol) skaičius, ir įgeneruoti į jį kontento (konkrečiai '.'). Vienas iš būdų generuoti skaičių ir pridėti tašką kaip kontentą:
+<pre><code>content: counter(list_number) ".";</code></pre>                   
+               </p>
+               <p>
                    <strong>2014.03.28</strong> <a href="http://blog.gabrielsaldana.org/wp-content/uploads/2012/02/css3-multi-column.js">CSS3 stulpelių fixas</a>
                </p>
                <p>
@@ -95,44 +144,86 @@ var $multiselect = $('.multiselect').multiselect({
             </div>
             <div class="col-lg-6">
                <h3>Įrankių dėžė</h3>
+               <h4>Optimizavimas</h4>
+               <p>
+                  Paveikslėlių optimizavimas online <a href="https://kraken.io/">Kraken</a>
+               </p>
+               <br/>
+                
                <h4>Generatoriai:</h4>
                <p> <a href="http://html-generator.weebly.com/css-shape-generator.html">CSS shapes (Trikampiai, kitos nesudėtingos figūros)</a></p>
                <p>Spalvų kodams perversti iš HEX į RGBA <a href="http://hex2rgba.devoth.com/">HEX2RGBA</a></p>
                <p>CSS gradientų generavimas <a href="http://www.colorzilla.com/gradient-editor/">Colorzilla</a></p>
-               <p>Custom fontų generavimui: <a href="http://www.fontsquirrel.com/tools/webfont-generator">Fontsquerl</a></p>
+               <p>Custom fontų generavimui: <a href="http://www.fontsquirrel.com/tools/webfont-generator">Fontsquerl</a>, <a href="http://onlinefontconverter.com/">Online font converter</a></p>
+               <br/>
+
+               <h4>Darbas su imagemap'ais</h4>
+               <p><a href="http://www.image-maps.com/">Įrankis mapinti online</a></p>
+               <p><a href="https://github.com/stowball/jQuery-rwdImageMaps">Responsive image maps pluginas</a></p>
+               <br/>
+
                <h4>CSS3 kontentas stulpeliais visose naršyklėse</h4>
                <p>
                   Pradinis variantas: <a href="https://github.com/BetleyWhitehorne/CSS3MultiColumn">CSS3MultiColumn</a>
                    + <a href="http://blog.gabrielsaldana.org/wp-content/uploads/2012/02/css3-multi-column.js">Fixas</a>
                </p>
+               <p>
+                  Stilius turi būti aprašytas vienai kalsei. pvz.: .columns-2 (negalima .content .columns-2)
+               </p>
+               <br/>
+
                <h4>Karuseles ir slaideriai</h4>
                <p><a href="http://jquery.malsup.com/cycle2/">Cycle2</a> [<a href="http://jquery.malsup.com/cycle2/demo/">Demo</a>, <a href="http://jquery.malsup.com/cycle2/api/">Dokumentacija</a>]</p>
+               <br/>
+
                <h4>HTML5 video fone</h4>
-               <p><a href="http://syddev.com/jquery.videoBG/">jQuery.videobg</a></p>
+               <p><a href="http://syddev.com/jquery.videoBG/">jQuery.videobg</a>(Netinka mobiliems įrenginiams)</p>
+               <br/>
+
                <h4>Custom select </h4>
                <p><a href="https://github.com/fnagel/jquery-ui/wiki/Selectmenu">jQuery UI Selectmenu Widget by fnagel</a></p>
+               <br/>
+
                <h4>Custom multiselect</h4>
                <p>
                   jQuery UI MultiSelect Widget by Eric Hynds
                    [<a href="http://www.erichynds.com/examples/jquery-ui-multiselect-widget/demos/#basic">Demo</a>, <a href="http://www.erichynds.com/blog/jquery-ui-multiselect-widget">Dokumentacija</a>]
                </p>
+               <br/>
+
                <h4>Custom radio/checkbox</h4>
                <p><a href="http://fronteed.com/iCheck/">iCheck</a></p>
+               <br/>
+
                <h4>Content'o ir paveiksleliu paetikimas popupe</h4>
                <p><a href="http://formstone.it/components/boxer">Boxer</a> Primityvus ir gana prastai dokumentuotas, bet daro ka reikia :)</p>
                <p><a href="http://fancybox.net/howto">Fancybox</a></p>
+               <br/>
+
                <h4>Custom kontento scrolleris</h4>
                <p><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">jQuery custom content scroller by malihu</a></p>
+               <br/>
+
                <h4>Limpantys(sticky) blokai</h4>
                <p><a href="http://imakewebthings.com/jquery-waypoints/shortcuts/sticky-elements/">jQuery Waypoints - sticky-elements</a></p>
+               <br/>
+
                <h4>Eventai kai pasiekiamas tam tikras elementas</h4>
                <p><a href="http://imakewebthings.com/jquery-waypoints/">jQuery Waypoints</a></p>
+               <br/>
+
                <h4>ScrollTo</h4>
                <p><a href="http://balupton.github.io/jquery-scrollto/">Smooth scroll to any jQuery/DOM element</a></p>
+               <br/>
+
                <h4>IE (6-9) kampu apvalinimas, šešeliai</h4>
                <p><a href="http://css3pie.com/documentation/">CSS3PIE</a></p>
+               <br/>
+
                <h4>Patogus IE veikiantys CSS selektoriai (:first-child, :last-child, :nth-child(2n)...)</h4>
                <p><a href="http://selectivizr.com/">selectivizr</a></p>
+               <br/>
+
                <h4>Placeholderis IE</h4>
                <p><a href="https://gist.github.com/jakebellacera/1085180">jquery.placeholder.js</a></p>
             </div>
