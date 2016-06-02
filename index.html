@@ -27,6 +27,25 @@
             <div class="col-lg-6">
                 <h3>Žurnalas</h3>
                 <article>
+                  <h4>CSS proporcijos</h4>
+                  <p><a href="http://www.mademyday.de/css-height-equals-width-with-pure-css.html">Bloko proporcijų išlaikymas vien su CSS</a></p>
+                </article>
+
+                <article>
+                  <h4>Paprastas slide-to snippetas</h4>
+                  <pre>
+$('.slide-to').on('click', function(e){
+    var $this = $(this);
+
+    $('html, body').animate({
+        scrollTop: $($this.data('target')).offset().top
+    }, 600);
+
+    e.preventDefault();
+});
+                  </pre>
+                </article>
+                <article>
                   <h4>img -> word</h4>
                   <p><a href="http://www.onlineocr.net/">http://www.onlineocr.net/ </a></p>
                 </article>
@@ -343,6 +362,22 @@ var $multiselect = $('.multiselect').multiselect({
             </div>
             <div class="col-lg-6">
                 <h3>Įrankių dėžė</h3>
+                <h4>Naujienlaiškiai. (Responsive be media-queries, css inliner, white-space pašalinimas, html kodo dydis kilobaitais)</h4>
+                <p>
+                    <a href="http://webdesign.tutsplus.com/tutorials/creating-a-future-proof-responsive-email-without-media-queries--cms-23919">Kaip kurti responsive naujienlaiškius</a>
+                </p>
+                <p>
+                    <a href="https://inliner.cm/">CSS inliner</a>
+                </p>
+                <p>
+                    <a href="http://www.textfixer.com/tools/remove-white-spaces.php">Whitespace pašalinimas</a>
+                </p>
+                <p>
+                    <a href="http://bytesizematters.com/">Įpastinto HTML kodo dydžio paskaičiavimas</a>
+                </p>
+                <br/>
+
+
                 <h4>Optimizavimas</h4>
                 <p>
                     Paveikslėlių optimizavimas online <a href="https://kraken.io/">Kraken</a>
@@ -384,6 +419,8 @@ var $multiselect = $('.multiselect').multiselect({
                 <h4>Karuseles ir slaideriai</h4>
                 <p>
                   Owl carousele - su CSS3 animacijom ir taouch eventais: <a href="http://www.owlcarousel.owlgraphic.com/">http://www.owlcarousel.owlgraphic.com/</a>
+                  <br/>
+                  Paslėpti elementai prieš atvažiuodami mirkčioja. Fix: ant .owl-item uždėti z-index: -1;
                 </p>
                 <p>
                   OWL sliderio thumbnailsai <a href="http://jsfiddle.net/BBoyJuss/EGrGN/light/ ">http://jsfiddle.net/BBoyJuss/EGrGN/light/ </a>
