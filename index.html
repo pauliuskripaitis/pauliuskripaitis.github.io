@@ -6,8 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dev Log | Paulius Kripaitis</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+    
+    <link rel="stylesheet" href="js/highlight/styles/xcode.css">
+    <script src="js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/stylesheet.css">
 </head>
 
 <body>
@@ -27,14 +35,184 @@
             <div class="col-lg-6">
                 <h3>Žurnalas</h3>
                 <article>
+                    <h4>2018 Kovas</h4>
+                    <h5>1. Centruojam nežinomo aukščio bloką nežinomo aukščio bloke. Tik CSS </h5>
+                    <p>Labai gera technika kai reikia centruoti pvz.: prisijungimo formą. Tada ji būna cenruota dideliuose ekranuose, o mobiliuose įrenginiuose tiesiog atsiranda scrollas.</p>
+                    <pre><code>.block {
+    text-align: center;
+}
+
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+    
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}</code></pre>
+                    <p>Straipsnis apie tai <a href="https://css-tricks.com/centering-in-the-unknown/">https://css-tricks.com/centering-in-the-unknown/</a></p>
+                    <br/>
+                    <h5>2. Datos intervalo jQuery pluginas </h5>
+                    <p>Kai reikia vienam ar dveijuose kalendoriuose parinkti datos intervalą</p>
+                    <p><a href="http://www.daterangepicker.com/">http://www.daterangepicker.com/</a></p>
+                    <br/>
+                    <h5>3. CSS/JS jungiklis</h5>
+                    <p><a href="https://codepen.io/stevenfabre/pen/qpBDy">https://codepen.io/stevenfabre/pen/qpBDy</a></p>
+                </article>
+                <article>
+                    <h4>2018 Vasaris</h4>
+                    <h5>1. Skraidaintis label prie inputu/textarea</h5>
+                    <pre><code>// Floating label
+
+$('input, textarea').each(function(){
+
+    var $this = $(this);
+
+    if (this.value) {
+        $this.next().removeClass('placeholder-shown');
+    }else {
+        $this.next().addClass('placeholder-shown');
+    }
+
+});
+
+$('input, textarea').on('change keyup', function(){
+    var $this = $(this);
+
+    if (this.value) {
+        $this.next().removeClass('placeholder-shown');
+    }else {
+        $this.next().addClass('placeholder-shown');
+    }
+
+});</code></pre>
+                    <pre><code>/*------------------------------------*\
+#Floating-label
+\*------------------------------------*/
+
+.form-row,
+.form-item {
+    position: relative;
+}
+
+.floating-label {
+    position: absolute;
+    left: 5px;
+    top: -7px;
+    font-size: 12px;
+    padding-left: 0;
+    opacity: 1;
+    @include transition(top 0.2s, font-size 0.2s, opacity 0.2s);
+    pointer-events: none;
+    color: #111111;
+}
+
+
+:placeholder-shown ~ .floating-label,
+.placeholder-shown.floating-label {
+    top: 9px;
+    font-size: 14px;
+    opacity: 0;
+}</code></pre>  
+                    <br/>
+                    <h5>2. Kai reikia išvalyti wysiwyg šiukšles - tuščius p</h5>
+                    <pre><code>p:empty {
+    display: none;
+}</code></pre> 
+                    <br/>
+                    <h5>3. Jei turim elementą tik su ID, galima jį paselektinti taip:</h5>
+                    <pre><code>[id="some-widget"] {
+    width: 50%;
+}</code></pre> 
+                    <p>tokio selektoriaus stiprumas toks pat kaip klasės.</p>
+                </article>
+                <article>
+                    <h4>2018 Sausis</h4>
+                    <h5> 1. img "cover" efektas relative div'e</h5>
+                    <pre><code class="css">img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-height: none;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}</code></pre>
+                    <br/>
+                    
+                    <h5>2. Js įrankis google maps popupo stiliams koreguoti</h5>
+                    <p><a href="https://github.com/atmist/snazzy-info-window">https://github.com/atmist/snazzy-info-window</a></p>
+                    <br/>
+                    <h5>3. Kažkur rastas <strong>sticky footer</strong>, kai footerio aukštis nefiksuotas.</h5>
+                    <p>Flex panaudotas, bet taip, kad jis iš tikro veikia ir nieko nesugadina. Yra apsitaikę problemų su šituo būdu, kad elementui su flex uždedamas overflow hidden, bet jis veikia tada ne taip kaip tikimasi.</p>
+                    <pre><code class="css">/* Sticky footer */
+
+html {
+    height: 100%;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; 
+}
+
+.site-header,
+.site-footer {
+    flex: none;
+}
+
+.site-center {
+    flex: 1 0 auto;
+    padding: var(--space) var(--space) 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.site-center::after {
+    content: '\00a0';
+    /* &nbsp; */
+    display: block;
+    margin-top: var(--space);
+    height: 0px;
+    visibility: hidden;
+}
+
+@media (--break-lg) {
+    .site-center {
+    padding-top: var(--space-lg);
+}
+
+.site-center::after {
+    margin-top: var(--space-lg); } 
+}
+.site-center--full {
+    padding: 0; 
+}
+
+.site-center--full::after {
+    content: none; 
+}</code></pre>
+                </article>
+                <hr/>
+                <article>
                   <h4>CSS proporcijos</h4>
                   <p><a href="http://www.mademyday.de/css-height-equals-width-with-pure-css.html">Bloko proporcijų išlaikymas vien su CSS</a></p>
                 </article>
 
                 <article>
                   <h4>Paprastas slide-to snippetas</h4>
-                  <pre>
-$('.slide-to').on('click', function(e){
+                  <pre><code class="js">$('.slide-to').on('click', function(e){
     var $this = $(this);
 
     $('html, body').animate({
@@ -42,8 +220,7 @@ $('.slide-to').on('click', function(e){
     }, 600);
 
     e.preventDefault();
-});
-                  </pre>
+});</code></pre>
                 </article>
                 <article>
                   <h4>img -> word</h4>
@@ -83,8 +260,7 @@ $('.slide-to').on('click', function(e){
                 </article>
                 <article>
                   <h4>Centruojam bet ką viduryje</h4>
-                  <pre>
-position: absolute;
+                  <pre><code class="css">position: absolute;
 top: 50%;
 -webkit-transform: translateY(-50%);
 -ms-transform: translateY(-50%);
@@ -95,8 +271,7 @@ top: 50%;
 left: 50%;
 -webkit-transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
-                  </pre>
+transform: translate(-50%, -50%);</code></pre>
                 </article>
                 <article>
                   <h4>Įvairiems img loading greičio klausimams spręsti. Ypač FF </h4>
@@ -147,13 +322,12 @@ transform: translate(-50%, -50%);
                         iPad ir iPhone nereikalingų stilių išjungimas:
                     </h4>
                     <p>
-                     <pre><code>input {
+                     <pre><code class="css">input {
     -webkit-appearance: none;
-    border-radius: 0;}</code>
-</pre>
+    border-radius: 0;
+}</code></pre>
                      Nuorodų stiliaus ant telefono numerių išjungimas:
-                     <pre><code>meta name = "format-detection" content = "telephone=no"</code>
-</pre>
+                     <pre><code>meta name = "format-detection" content = "telephone=no"</code></pre>
 
                     </p>
                </article>
@@ -191,7 +365,7 @@ transform: translate(-50%, -50%);
                         Paveikslelisu galima skeilinti su CSS transformu
                     </h4>
                     <p>
-                     <pre>scale: 1.1;</pre>
+                     <pre><code>scale: 1.1;</code></pre>
                     </p>
                </article>
                 <article>
@@ -227,7 +401,7 @@ transform: translate(-50%, -50%);
                 <article>
                     <h4>Characteris mobiliu meniu ikonai (deja jis neveikia mobiliuose įrenginiuose)</h4>
                     <p>
-                        <pre>&#9776;</pre>
+                        <pre><code>&#9776;</code></pre>
                     </p>
                 </article>
                 <article>
@@ -243,14 +417,13 @@ transform: translate(-50%, -50%);
                     <h4>Sulietuvinta konfigūracija jQ UI datepicker'iui</h4>
                     <p>
                         <pre><code> $('.datepicker').datepicker({ 
-            showOn: "button",
-            buttonText: "",
-            dateFormat: "yy-mm-dd",
-            firstDay: 1,
-            dayNamesMin: [ "Se", "Pi", "An", "Tr", "Ke", "Pe", "Še" ],
-            monthNames: [ "Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis" ] 
-        });
-</code></pre> 
+    showOn: "button",
+    buttonText: "",
+    dateFormat: "yy-mm-dd",
+    firstDay: 1,
+    dayNamesMin: [ "Se", "Pi", "An", "Tr", "Ke", "Pe", "Še" ],
+    monthNames: [ "Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis" ] 
+});</code></pre> 
 
                     </p>
                 </article>
@@ -362,10 +535,28 @@ var $multiselect = $('.multiselect').multiselect({
             </div>
             <div class="col-lg-6">
                 <h3>Įrankių dėžė</h3>
-                <h4>Animavimas</h4>
+                <h4>Google maps</h4>
                 <p>
-                  Kontento blokų animavimas, kai pamatomas viewporte <a href="https://github.com/matthieua/WOW">https://github.com/matthieua/WOW</a>
+                    Google maps popupo stiliai <a href="https://github.com/atmist/snazzy-info-window">https://github.com/atmist/snazzy-info-window</a>
                 </p>
+                <p>
+                    Google maps taškų grupavimas zoom'inant <a href="https://github.com/googlemaps/js-marker-clusterer">https://github.com/googlemaps/js-marker-clusterer</a>
+                </p>
+                <br/>
+                <h4>Animavimas</h4>
+                <ul>
+                    <li>
+                        <p>
+                            Kontento blokų animavimas, kai pamatomas viewporte <a href="https://github.com/matthieua/WOW">https://github.com/matthieua/WOW</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Animacijų progreso pluginas. Skirtas animuoti bet kokiems css animuojamiems parametrams, kurie keisis slenkant puslapį žemyn. 
+                            <a href="https://github.com/Prinzhorn/skrollr">scrollr</a>
+                        </p>
+                    </li>
+                </ul>
                 <br/>
 
                 <h4>Gesture eventų pagavimai touch įrenginiams</h4>
@@ -374,7 +565,8 @@ var $multiselect = $('.multiselect').multiselect({
                 </p>
                 <br/>
 
-                <h4>Naujienlaiškiai. (Responsive be media-queries, css inliner, white-space pašalinimas, html kodo dydis kilobaitais)</h4>
+                <h4>Naujienlaiškiai.</h4>
+                <p>(Responsive be media-queries, css inliner, white-space pašalinimas, html kodo dydis kilobaitais)</p>
                 <p>
                     <a href="http://webdesign.tutsplus.com/tutorials/creating-a-future-proof-responsive-email-without-media-queries--cms-23919">Kaip kurti responsive naujienlaiškius</a>
                 </p>
@@ -540,7 +732,7 @@ var $multiselect = $('.multiselect').multiselect({
             </div>
         </div>
         <div class="footer">
-            <p>© 2014-2016 | <a href="http://paulius.kripaitis.lt">Paulius Kripaitis </a>
+            <p>© 2014 - 2018 | <a href="http://paulius.kripaitis.lt">Paulius Kripaitis </a>
             </p>
         </div>
     </div>
